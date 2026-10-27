@@ -74,7 +74,7 @@ export const primaryNav: NavEntry[] = [
 /** Home-page anchor as a router path (the router adds the site base path). */
 export const homeAnchor = (id: SectionId) => `/#${id}`
 
-/** Home-page anchor as a full href, including the base path (e.g. /scfpe-lixil.github.io/#apps). */
+/** Home-page anchor as a full href, including the base path (e.g. /scfpe-lixil/#apps). */
 export const homeHref = (id: SectionId) => `${import.meta.env.BASE_URL}#${id}`
 
 export const scfpeLinks = {

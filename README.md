@@ -1,6 +1,6 @@
 # LIXIL | GROHE Dealer Onboarding, powered by SCFPe
 
-Live site (GitHub Pages): https://tanujit.github.io/scfpe-lixil.github.io/
+Live site (GitHub Pages): https://tanujit.github.io/scfpe-lixil/
 
 ## What's in this repository
 
@@ -18,15 +18,15 @@ npm install
 npm run publish:pages
 ```
 
-`publish:pages` builds the site for the `/scfpe-lixil.github.io/` path and
-copies it into the repository root (replacing the previous build). Then commit
-and push.
+`publish:pages` builds the site for the `/scfpe-lixil/` path and copies it
+into the repository root (replacing the previous build). Then commit and push.
 
 The path matters: this repository is a GitHub Pages *project* site, so it is
-served from `https://tanujit.github.io/scfpe-lixil.github.io/`. If the site
-moves (a custom domain, or a repository named `tanujit.github.io`), change the
-`--base` value in the `build:pages` script in `scfpe-onboarding/package.json`
-to `/` and publish again.
+served from `https://tanujit.github.io/scfpe-lixil/` (the path is the
+repository name). If the repository is renamed, change the `--base` value in
+the `build:pages` script in `scfpe-onboarding/package.json` to `/<new-name>/`;
+for a custom domain or a repository named `tanujit.github.io`, use `/`. Then
+publish again.
 
 ## GitHub Pages settings
 

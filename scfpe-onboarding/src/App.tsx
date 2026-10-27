@@ -56,7 +56,7 @@ export function AppShell() {
 }
 
 // The site may be served from a sub-path (GitHub Pages project sites), e.g.
-// /scfpe-lixil.github.io/. Vite's base becomes the router base, without its trailing slash.
+// /scfpe-lixil/. Vite's base becomes the router base, without its trailing slash.
 const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 /** `hook` lets tests render any route with wouter's memory location. */
