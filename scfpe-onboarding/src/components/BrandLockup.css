@@ -1,0 +1,83 @@
+.brand-lockup {
+  /* Never squeeze the logos; the header switches to the menu button instead. */
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 44px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-lockup__logo {
+  width: auto;
+  height: 28px;
+}
+
+.brand-lockup__divider {
+  width: 1px;
+  height: 28px;
+  background: var(--line-strong);
+}
+
+/* LIXIL logo over "Dealer Onboarding", with the GROHE tile beside both. */
+.brand-lockup__program {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: var(--space-3);
+  row-gap: 4px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.brand-lockup__lixil {
+  grid-column: 1;
+  grid-row: 1;
+  width: auto;
+  height: 16px;
+}
+
+.brand-lockup__program-sub {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+
+.brand-lockup__grohe {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: auto;
+  height: 34px;
+  border-radius: 2px;
+}
+
+/* Small phones: keep both logos, drop the caption so the menu button fits. */
+@media (max-width: 419px) {
+  .brand-lockup__program-sub {
+    display: none;
+  }
+
+  .brand-lockup__program {
+    grid-template-rows: auto;
+  }
+
+  .brand-lockup__lixil {
+    height: 14px;
+  }
+
+  .brand-lockup__grohe {
+    grid-row: 1;
+    height: 28px;
+  }
+}
+
+@media (max-width: 359px) {
+  .brand-lockup__divider,
+  .brand-lockup__program {
+    display: none;
+  }
+}

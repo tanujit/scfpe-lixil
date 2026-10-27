@@ -1,0 +1,15 @@
+# Dependencies and build/working output
+node_modules/
+scfpe-onboarding/dist/
+pdf-rebrand/out/
+.vitest-cache/
+
+# Original Xuriti-branded source material. Everything committed here is
+# published by GitHub Pages, so these stay local (see pdf-rebrand/README.md).
+source-audit/
+
+# Local tool settings
+.claude/
+.vscode/
+*.log
+.DS_Store

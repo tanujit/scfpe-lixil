@@ -1,0 +1,198 @@
+.workflow {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(40% 50% at 0% 10%, rgb(0 213 146 / 0.08), transparent 70%),
+    radial-gradient(40% 50% at 100% 60%, rgb(35 100 219 / 0.07), transparent 70%);
+}
+
+.workflow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(rgb(14 21 48 / 0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+  mask-image: linear-gradient(180deg, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, transparent, black 20%, black 80%, transparent);
+}
+
+.workflow__equation {
+  max-width: 40rem;
+}
+
+.workflow__op {
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+.workflow__result {
+  color: var(--green-ink);
+}
+
+.workflow__steps {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-step {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.workflow-step:hover {
+  border-color: var(--blue-100);
+  box-shadow: var(--shadow-md);
+}
+
+.workflow-step__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.workflow-step__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--blue-50);
+  color: var(--brand-blue);
+}
+
+.workflow-step__number {
+  font-size: 2rem;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--line-strong);
+}
+
+.workflow-step__title {
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  font-weight: 700;
+}
+
+.workflow-step__body {
+  color: var(--ink-2);
+}
+
+.workflow-step--result {
+  border-color: transparent;
+  background:
+    radial-gradient(80% 90% at 100% 0%, rgb(0 213 146 / 0.22), transparent 70%),
+    var(--navy-900);
+  color: var(--on-dark);
+  box-shadow: 0 20px 40px -20px rgb(11 22 64 / 0.6);
+}
+
+.workflow-step--result:hover {
+  border-color: transparent;
+}
+
+.workflow-step--result .workflow-step__icon {
+  background: rgb(0 213 146 / 0.14);
+  color: var(--brand-mint);
+}
+
+.workflow-step--result .workflow-step__number {
+  color: rgb(255 255 255 / 0.2);
+}
+
+.workflow-step--result .workflow-step__body {
+  color: var(--on-dark-2);
+}
+
+.workflow__connector {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 56px;
+}
+
+.workflow__connector::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, var(--line-strong), var(--brand-mint), var(--line-strong));
+}
+
+.workflow__connector-chip {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--mint-100);
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: 0 0 0 6px var(--mint-50);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--green-ink);
+}
+
+.workflow__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-12);
+}
+
+@media (min-width: 900px) {
+  .workflow__steps {
+    grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr) 64px minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .workflow-step {
+    padding: var(--space-8);
+  }
+
+  .workflow-step:hover {
+    transform: translateY(-3px);
+  }
+
+  .workflow__connector {
+    height: auto;
+  }
+
+  .workflow__connector::before {
+    top: 50%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 1px;
+    background: linear-gradient(90deg, var(--line-strong), var(--brand-mint), var(--line-strong));
+  }
+}
+
+@media (max-width: 479px) {
+  .workflow__footer .btn {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+    padding-block: var(--space-3);
+  }
+}

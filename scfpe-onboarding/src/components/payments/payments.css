@@ -1,0 +1,173 @@
+.payments-info {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  margin-bottom: var(--space-8);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--canvas);
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+
+.payments-info svg {
+  flex: none;
+  color: var(--brand-blue);
+}
+
+.van-card {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 44rem;
+  padding: clamp(1.25rem, 1rem + 1.5vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(70% 100% at 100% 0%, rgb(35 100 219 / 0.07), transparent 70%),
+    var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.van-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.van-card__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--navy-900);
+  color: var(--brand-mint);
+}
+
+.van-card__title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+.van-card__fields {
+  display: grid;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.van-card__field {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.4fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.van-card__field:last-child {
+  border-bottom: 0;
+}
+
+.van-card__field:nth-child(even) {
+  background: var(--canvas);
+}
+
+.van-card__field dt {
+  font-size: var(--text-sm);
+  color: var(--ink-3);
+}
+
+.van-card__field dd {
+  margin: 0;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.van-card__pending {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--canvas);
+  color: var(--ink-2);
+}
+
+.van-card__pending a {
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+
+.pay-steps {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0 0 var(--space-6);
+  padding-left: var(--space-5);
+}
+
+.pay-steps li {
+  padding-left: var(--space-2);
+}
+
+.pay-steps li::marker {
+  font-weight: 700;
+  color: var(--green-ink);
+}
+
+.pay-steps strong {
+  display: block;
+}
+
+.pay-steps span {
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+
+.pay-messages {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pay-message {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--brand-green);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.pay-message h3 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.pay-message p {
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+
+@media (min-width: 900px) {
+  .pay-messages {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 479px) {
+  .payments-info {
+    align-items: flex-start;
+    border-radius: var(--radius-md);
+  }
+
+  .van-card__field {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}

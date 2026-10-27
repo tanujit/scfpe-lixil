@@ -1,0 +1,144 @@
+.apps {
+  padding-top: 0;
+}
+
+.apps__panel {
+  grid-template-columns: minmax(0, 1fr);
+  display: grid;
+  gap: var(--space-8);
+  padding: clamp(1.5rem, 0.75rem + 3.5vw, 4rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(50% 80% at 100% 0%, rgb(35 100 219 / 0.08), transparent 70%),
+    radial-gradient(40% 70% at 0% 100%, rgb(0 213 146 / 0.1), transparent 70%),
+    var(--canvas);
+}
+
+.apps__head {
+  margin-bottom: 0;
+}
+
+.apps__grid {
+  grid-template-columns: minmax(0, 1fr);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.apps__item {
+  display: flex;
+}
+
+.app-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+  transition:
+    box-shadow var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.app-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.app-card__head {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.app-card__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--blue-50);
+  color: var(--brand-navy);
+}
+
+.app-card__platform {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.app-card__title {
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  font-weight: 700;
+}
+
+.app-card__desc {
+  margin-bottom: var(--space-5);
+  color: var(--ink-2);
+}
+
+.app-card .status-note {
+  margin-bottom: var(--space-5);
+  overflow-wrap: anywhere;
+}
+
+/* Store-badge style button, pinned to the bottom so both cards line up. */
+.app-card__cta {
+  justify-content: space-between;
+  width: 100%;
+  min-height: 60px;
+  margin-top: auto;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  text-align: left;
+}
+
+.app-card__cta-text {
+  display: grid;
+  gap: 3px;
+  line-height: 1.1;
+}
+
+.app-card__cta-kicker {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.72;
+}
+
+.app-card__cta-store {
+  font-size: var(--text-base);
+  font-weight: 700;
+}
+
+.app-card__cta-arrow {
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.app-card__cta:hover .app-card__cta-arrow {
+  transform: translate(2px, -2px);
+}
+
+@media (min-width: 720px) {
+  .apps__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .apps__panel {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    align-items: center;
+  }
+}

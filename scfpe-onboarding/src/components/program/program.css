@@ -1,0 +1,344 @@
+/* ---------- Discount plan ---------- */
+
+.discount-plan {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.discount-plan__head {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.discount-plan__rows {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.discount-plan__row {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr) 3.5rem;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.discount-plan__day {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--navy-900);
+  color: var(--on-dark);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.discount-plan__day sup {
+  font-size: 0.65em;
+  margin-left: 1px;
+}
+
+.discount-plan__track {
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--canvas);
+  overflow: hidden;
+}
+
+.discount-plan__bar {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--brand-green), var(--brand-mint));
+  transform-origin: left center;
+}
+
+.discount-plan__value {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+/* ---------- Benefit list ---------- */
+
+.benefit-list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.benefit-list li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.benefit-list__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--mint-50);
+  color: var(--green-ink);
+}
+
+.benefit-list__text {
+  padding-top: 6px;
+}
+
+.benefit-list__text strong {
+  font-weight: 650;
+}
+
+.benefit-list__text span {
+  color: var(--ink-2);
+}
+
+/* ---------- Split layout ---------- */
+
+.split {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.split > * {
+  min-width: 0;
+}
+
+@media (min-width: 960px) {
+  .split {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.card__title {
+  margin-bottom: var(--space-5);
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+/* ---------- Program flow ---------- */
+
+.program-flow {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.program-flow__parties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.party-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.party-chip--manufacturer {
+  background: #fff1e8;
+  color: #9a3b0c;
+}
+
+.party-chip--platform {
+  background: var(--blue-50);
+  color: var(--brand-navy);
+}
+
+.party-chip--dealer {
+  background: var(--canvas);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+
+.party-chip--financier {
+  background: var(--mint-50);
+  color: var(--green-ink);
+}
+
+.program-flow__subhead {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--ink-2);
+}
+
+.program-flow__direct ul {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.program-flow__direct li,
+.program-flow__route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.program-flow__direct svg,
+.program-flow__route svg {
+  color: var(--ink-3);
+}
+
+.program-flow__direct-title {
+  font-weight: 600;
+}
+
+.program-flow__steps {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.program-flow__step {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.program-flow__num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--navy-900);
+  color: var(--brand-mint);
+  font-weight: 700;
+}
+
+.program-flow__body {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.program-flow__title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.program-flow__note {
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+
+@media (min-width: 720px) {
+  .program-flow__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .program-flow__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Actor columns (onboarding overview) ---------- */
+
+.actor-grid {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.actor-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+}
+
+.actor-card__name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+.actor-card ul {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.actor-card li {
+  display: flex;
+  gap: var(--space-2);
+  color: var(--ink-2);
+}
+
+.actor-card li svg {
+  flex: none;
+  margin-top: 4px;
+  color: var(--brand-green);
+}
+
+@media (min-width: 640px) {
+  .actor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .actor-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 479px) {
+  .discount-plan__head {
+    grid-template-columns: 6rem 1fr;
+  }
+
+  .discount-plan__row {
+    grid-template-columns: 6rem minmax(0, 1fr) 3rem;
+    gap: var(--space-2);
+  }
+
+  .discount-plan__value {
+    font-size: var(--text-lg);
+  }
+}
